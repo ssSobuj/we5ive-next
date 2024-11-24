@@ -1,12 +1,13 @@
+import Hero from "@/components/home/Hero";
 import ShopButton from "@/components/pertial/ShopButton";
+import FeaturedProduct from "@/components/product/FeaturedProduct";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
-      home page
-      <ShopButton />
+      <Hero />
+      <FeaturedProduct />
     </div>
   );
 }

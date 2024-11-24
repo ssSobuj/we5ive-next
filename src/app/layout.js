@@ -1,5 +1,6 @@
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/layout/Header";
 
 const manrope = Manrope({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -16,7 +17,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable}`}>{children}</body>
+      <body className={`${manrope.variable}`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

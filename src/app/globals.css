@@ -4,6 +4,7 @@
 
 body {
   font-family: var(--font-manrope), sans-serif;
+  background-color: #f4f8ff;
 }
 
 @layer base {
