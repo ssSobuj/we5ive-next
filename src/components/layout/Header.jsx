@@ -16,10 +16,10 @@ function Header() {
   };
 
   return (
-    <header className="bg-gray-100 py-5 px-5 md:px-20">
+    <header className="bg-gray-100 py-5 px-5 md:px-20 sticky top-0 z-50">
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button
             onClick={toggleMobileMenu}
             aria-label="Toggle Menu"
@@ -33,10 +33,8 @@ function Header() {
           <img src="/images/logo.png" alt="We5ive Logo" className="w-40" />
         </div>
 
-        {/* Hamburger Icon for Mobile */}
-
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex space-x-6 text-gray-600">
+        <nav className="hidden lg:flex space-x-6 text-gray-600">
           <Link
             href="/"
             className="font-medium hover:text-primary-800 transition-colors"
@@ -64,7 +62,7 @@ function Header() {
         </nav>
 
         {/* Right Section: Search, Cart, and Profile */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-4">
           {/* Search Bar */}
           <div className="relative">
             <span className="absolute left-3 top-1/2 transform -translate-y-1/2">
@@ -92,41 +90,43 @@ function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-gray-200 absolute z-50 ">
-          <nav className="flex flex-col space-y-4 text-gray-600 p-4">
-            <Link
-              href="/"
-              className="font-medium hover:text-primary-800 transition-colors"
-              onClick={toggleMobileMenu}
-            >
-              Home
-            </Link>
-            <Link
-              href="#"
-              className="font-medium hover:text-primary-800 transition-colors"
-              onClick={toggleMobileMenu}
-            >
-              Shop
-            </Link>
-            <Link
-              href="#"
-              className="font-medium hover:text-primary-800 transition-colors"
-              onClick={toggleMobileMenu}
-            >
-              Deals
-            </Link>
-            <Link
-              href="#"
-              className="font-medium hover:text-primary-800 transition-colors"
-              onClick={toggleMobileMenu}
-            >
-              What&apos;s New
-            </Link>
-          </nav>
-        </div>
-      )}
+      {/* Mobile Menu (visible on devices smaller than lg) */}
+      <div
+        className={`${
+          mobileMenuOpen ? "block" : "hidden"
+        } lg:hidden bg-gray-200 absolute z-50 top-[80px] left-0 w-full`}
+      >
+        <nav className="flex flex-col space-y-4 text-gray-600 p-4">
+          <Link
+            href="/"
+            className="font-medium hover:text-primary-800 transition-colors"
+            onClick={toggleMobileMenu}
+          >
+            Home
+          </Link>
+          <Link
+            href="#"
+            className="font-medium hover:text-primary-800 transition-colors"
+            onClick={toggleMobileMenu}
+          >
+            Shop
+          </Link>
+          <Link
+            href="#"
+            className="font-medium hover:text-primary-800 transition-colors"
+            onClick={toggleMobileMenu}
+          >
+            Deals
+          </Link>
+          <Link
+            href="#"
+            className="font-medium hover:text-primary-800 transition-colors"
+            onClick={toggleMobileMenu}
+          >
+            What&apos;s New
+          </Link>
+        </nav>
+      </div>
     </header>
   );
 }
