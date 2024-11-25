@@ -1,6 +1,8 @@
+import Collection from "@/components/home/Collection";
+import Discount from "@/components/home/Discount";
 import Hero from "@/components/home/Hero";
-import ShopButton from "@/components/pertial/ShopButton";
 import FeaturedProduct from "@/components/product/FeaturedProduct";
+import SummerProduct from "@/components/product/SummerProduct";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -8,6 +10,9 @@ export default function Home() {
     <div>
       <Hero />
       <FeaturedProduct />
+      <Discount />
+      <Collection />
+      <SummerProduct />
     </div>
   );
 }
