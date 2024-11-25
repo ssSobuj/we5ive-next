@@ -1,6 +1,12 @@
 import { Manrope } from "next/font/google";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const manrope = Manrope({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -20,6 +26,7 @@ export default function RootLayout({ children }) {
       <body className={`${manrope.variable}`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

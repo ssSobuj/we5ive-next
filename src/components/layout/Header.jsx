@@ -1,52 +1,73 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
 import { PiHandbagSimpleLight } from "react-icons/pi";
 import { CiUser } from "react-icons/ci";
+import { FiMenu, FiX } from "react-icons/fi"; // For hamburger and close icons
 
 function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
-    <header className="bg-gray-100 py-5 shadow-md px-20">
+    <header className="bg-gray-100 py-5 px-5 md:px-20">
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <img w src="/images/logo.png" alt="We5ive Logo" className="w-40" />
+        <div className="md:hidden">
+          <button
+            onClick={toggleMobileMenu}
+            aria-label="Toggle Menu"
+            className="text-2xl text-gray-700"
+          >
+            {mobileMenuOpen ? <FiX /> : <FiMenu />}
+          </button>
         </div>
 
-        {/* Navigation Links */}
+        <div className="flex items-center space-x-2">
+          <img src="/images/logo.png" alt="We5ive Logo" className="w-40" />
+        </div>
+
+        {/* Hamburger Icon for Mobile */}
+
+        {/* Desktop Navigation Links */}
         <nav className="hidden md:flex space-x-6 text-gray-600">
           <Link
-            href="#"
-            className=" font-medium hover:text-primary-800 transition-colors"
+            href="/"
+            className="font-medium hover:text-primary-800 transition-colors"
           >
             Home
           </Link>
           <Link
             href="#"
-            className=" font-medium hover:text-primary-800 transition-colors"
+            className="font-medium hover:text-primary-800 transition-colors"
           >
             Shop
           </Link>
           <Link
             href="#"
-            className=" font-medium hover:text-primary-800 transition-colors"
+            className="font-medium hover:text-primary-800 transition-colors"
           >
             Deals
           </Link>
           <Link
             href="#"
-            className=" font-medium hover:text-primary-800 transition-colors"
+            className="font-medium hover:text-primary-800 transition-colors"
           >
             What&apos;s New
           </Link>
         </nav>
 
         {/* Right Section: Search, Cart, and Profile */}
-        <div className="flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-4">
           {/* Search Bar */}
           <div className="relative">
-            <span className="absolute left-3 top-1/2 transform -translate-y-1/2 ">
+            <span className="absolute left-3 top-1/2 transform -translate-y-1/2">
               <CiSearch />
             </span>
             <input
@@ -59,7 +80,6 @@ function Header() {
           {/* Cart Icon */}
           <button className="relative">
             <PiHandbagSimpleLight className="text-3xl" />
-
             <span className="absolute top-0 right-0 bg-black text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
               0
             </span>
@@ -71,6 +91,42 @@ function Header() {
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-gray-200 absolute z-50 ">
+          <nav className="flex flex-col space-y-4 text-gray-600 p-4">
+            <Link
+              href="/"
+              className="font-medium hover:text-primary-800 transition-colors"
+              onClick={toggleMobileMenu}
+            >
+              Home
+            </Link>
+            <Link
+              href="#"
+              className="font-medium hover:text-primary-800 transition-colors"
+              onClick={toggleMobileMenu}
+            >
+              Shop
+            </Link>
+            <Link
+              href="#"
+              className="font-medium hover:text-primary-800 transition-colors"
+              onClick={toggleMobileMenu}
+            >
+              Deals
+            </Link>
+            <Link
+              href="#"
+              className="font-medium hover:text-primary-800 transition-colors"
+              onClick={toggleMobileMenu}
+            >
+              What&apos;s New
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

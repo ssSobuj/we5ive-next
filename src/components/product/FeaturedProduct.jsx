@@ -61,7 +61,7 @@ const products = [
 
 const FeaturedProduct = () => {
   return (
-    <section className="py-8 px-20 bg-blue-50">
+    <section className="py-8 px-4 md:px-20">
       <div className="container mx-auto ">
         {/* Section Header */}
         <p className="text-sm text-[1.188rem] text-primary-600">
@@ -74,7 +74,10 @@ const FeaturedProduct = () => {
           <Carousel>
             <CarouselContent>
               {products.map((product) => (
-                <CarouselItem key={product.id} className="basis-1/4">
+                <CarouselItem
+                  key={product.id}
+                  className="basis-1/1 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                >
                   <div className="rounded-lg bg-white p-3 flex flex-col items-center">
                     <img
                       src={product.image}
@@ -96,7 +99,7 @@ const FeaturedProduct = () => {
             </CarouselContent>
             <div className="absolute top-[-50px] right-[26px] flex">
               <CarouselPrevious className="border-primary-600 text-primary-600 shadow-md rounded-full " />
-              <CarouselNext className="border-primary-600 text-primary-600 right-[-26px] shadow-md rounded-full " />
+              <CarouselNext className="border-primary-600 text-primary-600 right-[-26px] rounded-full " />
             </div>
           </Carousel>
 

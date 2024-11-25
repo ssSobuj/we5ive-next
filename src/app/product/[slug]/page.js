@@ -1,7 +1,14 @@
+import ProductDetails from "@/components/product/ProductDetails";
+import ReviewsSection from "@/components/product/ReviewsSection";
 import React from "react";
 
 function Page() {
-  return <div>page</div>;
+  return (
+    <>
+      <ProductDetails />
+      <ReviewsSection />
+    </>
+  );
 }
 
 export default Page;

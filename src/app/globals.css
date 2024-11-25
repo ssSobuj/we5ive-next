@@ -7,6 +7,17 @@ body {
   background-color: #f4f8ff;
 }
 
+.swiper-slide {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

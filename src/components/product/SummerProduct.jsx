@@ -4,6 +4,7 @@ import Image from "next/image";
 import { PiStarFill } from "react-icons/pi";
 import { PiStar } from "react-icons/pi";
 import Link from "next/link";
+import Star from "./Star";
 
 const products = [
   {
@@ -58,71 +59,7 @@ const products = [
 
 const SummerProduct = () => {
   return (
-    // <section className="py-8 px-20 bg-blue-50">
-    //   <div className="container mx-auto">
-    //     {/* Section Header */}
-    //     <p className="text-sm text-[1.188rem] text-primary-600">SUMMER</p>
-    //     <h2 className="text-[1.75rem] font-bold mb-6">Big Deal</h2>
-
-    //     {/* Product Grid */}
-    //     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    //       {products.map((product) => (
-    //         <div
-    //           key={product.id}
-    //           className="rounded-xl bg-white p-3 flex flex-col items-center"
-    //         >
-    //           <div className="rounded-xl bg-primary-100 p-2 w-full">
-    //             <Image
-    //               width={166}
-    //               height={250}
-    //               src={product.image}
-    //               alt={product.name}
-    //               className="w-full h-[18.6rem] object-cover mb-4 rounded-lg"
-    //             />
-    //           </div>
-    //           <div className="mt-3 text-start w-full">
-    //             <ul className="flex gap-1 items-center">
-    //               <li>
-    //                 <PiStarFill className="text-[#FFC700]" />
-    //               </li>
-    //               <li>
-    //                 <PiStarFill className="text-[#FFC700]" />
-    //               </li>
-    //               <li>
-    //                 <PiStarFill className="text-[#FFC700]" />
-    //               </li>
-    //               <li>
-    //                 <PiStar className="text-[#FFC700]" />
-    //               </li>
-    //               <li>
-    //                 <PiStar className="text-[#FFC700]" />
-    //               </li>
-    //               <li>(50)</li>
-    //             </ul>
-    //           </div>
-
-    //           <div className="w-full flex items-center justify-between mb-4 mt-4">
-    //             <p className="text-[16px]">{product.name}</p>
-    //             <h3 className="text-[1.188rem] font-semibold">
-    //               {product.price}
-    //             </h3>
-    //           </div>
-    //           <Button variant="outline" className="w-full">
-    //             Add to Cart
-    //           </Button>
-    //         </div>
-    //       ))}
-    //     </div>
-
-    //     {/* See More Button */}
-    //     <div className="text-center mt-6">
-    //       <Button variant="default" className="px-6">
-    //         See more
-    //       </Button>
-    //     </div>
-    //   </div>
-    // </section>
-    <section className="py-8 px-20 bg-blue-50">
+    <section className="py-8 px-4 md:px-20">
       <div className="container mx-auto">
         {/* Section Header */}
         <p className="text-sm text-[1.188rem] text-primary-600">SUMMER</p>
@@ -155,24 +92,7 @@ const SummerProduct = () => {
 
               {/* Rating */}
               <div className="mt-3 text-start w-full">
-                <ul className="flex gap-1 items-center">
-                  <li>
-                    <PiStarFill className="text-[#FFC700]" />
-                  </li>
-                  <li>
-                    <PiStarFill className="text-[#FFC700]" />
-                  </li>
-                  <li>
-                    <PiStarFill className="text-[#FFC700]" />
-                  </li>
-                  <li>
-                    <PiStar className="text-[#FFC700]" />
-                  </li>
-                  <li>
-                    <PiStar className="text-[#FFC700]" />
-                  </li>
-                  <li>(50)</li>
-                </ul>
+                <Star />
               </div>
 
               {/* Product Name and Price */}
